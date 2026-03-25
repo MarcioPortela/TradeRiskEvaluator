@@ -38,4 +38,9 @@ Leveraging the new .NET 8 `IExceptionHandler`, all unhandled exceptions and vali
     dotnet run
 
 4. Open your browser and navigate to the Swagger UI to test the endpoints:
-https://localhost:5001/swagger
+http://localhost:5000/swagger
+
+## 📡 API Endpoints
+**POST** `/api/v1/trades/calculate-risk`: Evaluates a list of trades and returns an array of risk categories.
+
+**POST** `/api/v1/trades/distribution`: Evaluates a batch of trades (up to 100k) and returns a detailed statistical summary grouped by risk category, including the top exposed client.
