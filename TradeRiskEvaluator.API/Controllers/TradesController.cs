@@ -54,7 +54,7 @@ namespace TradeRiskEvaluator.API.Controllers
         /// 
         /// Sample request:
         /// 
-        ///     POST /api/v1/trades/summary
+        ///     POST /api/v1/trades/distribution
         ///     [
         ///        { "value": 2000000, "clientSector": "Private", "clientId": "CLI001" },
         ///        { "value": 400000, "clientSector": "Public", "clientId": "CLI002" },
