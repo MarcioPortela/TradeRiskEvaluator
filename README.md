@@ -38,4 +38,4 @@ Leveraging the new .NET 8 `IExceptionHandler`, all unhandled exceptions and vali
     dotnet run
 
 4. Open your browser and navigate to the Swagger UI to test the endpoints:
-https://localhost:5001/swagger
+http://localhost:5000/swagger
