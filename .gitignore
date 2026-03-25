@@ -1,0 +1,40 @@
+## Arquivos ignorados para projetos .NET/C# ##
+
+# Pastas de compilação
+bin/
+obj/
+
+# Arquivos de configurações de usuários e IDEs
+.vs/
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+
+# Resultados de testes e cobertura de código
+TestResults/
+*.coverage
+*.coveragexml
+
+# Logs
+*.log
+
+# Arquivos temporários do OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Secrets locais (se for usar no futuro)
+secrets.json
+appsettings.Development.json
+appsettings.Local.json
+
+# Publicação
+Publish/
+out/
