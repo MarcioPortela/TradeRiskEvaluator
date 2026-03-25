@@ -1,0 +1,6 @@
+@TradeRiskEvaluator_HostAddress = http://localhost:5001
+
+GET {{TradeRiskEvaluator_HostAddress}}/trades/
+Accept: application/json
+
+###
