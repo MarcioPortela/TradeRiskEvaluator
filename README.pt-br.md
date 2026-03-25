@@ -39,7 +39,7 @@ Utilizando o novo `IExceptionHandler` do .NET 8, todas as exceções não tratad
 4. Abra seu navegador e acesse o Swagger UI para testar os endpoints:
 http://localhost:5000/swagger
 
-📡 Endpoints da API
+## 📡 Endpoints da API
 POST /api/v1/trades/calculate-risk: Avalia uma lista de operações e retorna um array de categorias de risco.
 
 POST /api/v1/trades/summary: Avalia um lote de operações (até 100k) e retorna um resumo estatístico detalhado agrupado por categoria de risco, incluindo o cliente de maior exposição.
