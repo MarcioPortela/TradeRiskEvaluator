@@ -42,4 +42,4 @@ http://localhost:5000/swagger
 ## 📡 Endpoints da API
 **POST** `/api/v1/trades/calculate-risk`: Avalia uma lista de operações e retorna um array de categorias de risco.
 
-**POST** `/api/v1/trades/summary`: Avalia um lote de operações (até 100k) e retorna um resumo estatístico detalhado agrupado por categoria de risco, incluindo o cliente de maior exposição.
+**POST** `/api/v1/trades/distribution`: Avalia um lote de operações (até 100k) e retorna um resumo estatístico detalhado agrupado por categoria de risco, incluindo o cliente de maior exposição.
