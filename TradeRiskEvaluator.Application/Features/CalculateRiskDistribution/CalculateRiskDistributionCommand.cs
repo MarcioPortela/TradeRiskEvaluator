@@ -8,9 +8,9 @@ namespace TradeRiskEvaluator.Application.Features.CalculateRiskDistribution
         public List<TradeDistributionRequest> Trades { get; set; } = new();
     }
 
-    public class CalculateRiskSummaryCommandValidator : AbstractValidator<CalculateRiskDistributionCommand>
+    public class CalculateRiskDistributionCommandValidator : AbstractValidator<CalculateRiskDistributionCommand>
     {
-        public CalculateRiskSummaryCommandValidator()
+        public CalculateRiskDistributionCommandValidator()
         {
             RuleForEach(x => x.Trades).SetValidator(new TradeDistributionRequestValidator());
         }

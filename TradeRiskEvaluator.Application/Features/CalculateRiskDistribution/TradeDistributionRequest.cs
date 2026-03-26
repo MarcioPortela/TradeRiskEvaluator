@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using TradeRiskEvaluator.Application.Constants;
+using TradeRiskEvaluator.Domain.Enum;
 
 namespace TradeRiskEvaluator.Application.Features.CalculateRiskDistribution
 {
@@ -13,15 +15,16 @@ namespace TradeRiskEvaluator.Application.Features.CalculateRiskDistribution
     {
         public TradeDistributionRequestValidator()
         {
-            RuleFor(x => x.Value).GreaterThan(0).WithMessage("Trade value must be greater than zero.");
+            RuleFor(x => x.Value)
+                .GreaterThan(0).WithMessage(ValidationMessages.GreaterThanZero);
 
             RuleFor(x => x.ClientSector)
-                .NotEmpty().WithMessage("ClientSector is required.")
-                .Must(s => s.Equals("Public", StringComparison.OrdinalIgnoreCase) ||
-                           s.Equals("Private", StringComparison.OrdinalIgnoreCase))
-                .WithMessage("ClientSector must be exactly 'Public' or 'Private'.");
+                .NotEmpty().WithMessage(ValidationMessages.RequiredField)
+                .IsEnumName(typeof(Sector), caseSensitive: false)
+                .WithMessage(ValidationMessages.InvalidSector);
 
-            RuleFor(x => x.ClientId).NotEmpty().WithMessage("ClientId is required for the summary.");
+            RuleFor(x => x.ClientId)
+                .NotEmpty().WithMessage(ValidationMessages.RequiredField);
         }
     }
 }

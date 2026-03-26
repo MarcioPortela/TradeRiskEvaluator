@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
+using TradeRiskEvaluator.Application.Constants;
 
 namespace TradeRiskEvaluator.Application.Features.CalculateRisk
 {
@@ -14,7 +15,7 @@ namespace TradeRiskEvaluator.Application.Features.CalculateRisk
         {
             RuleFor(x => x.Trades)
                 .NotEmpty()
-                .WithMessage("The list of trades cannot be empty.");
+                .WithMessage(ValidationMessages.EmptyTradesList);
 
             RuleForEach(x => x.Trades)
                 .SetValidator(new TradeRequestValidator());

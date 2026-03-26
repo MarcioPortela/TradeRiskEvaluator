@@ -6,13 +6,13 @@ using TradeRiskEvaluator.Domain.RiskRules;
 
 namespace TradeRiskEvaluator.Application.Features.CalculateRiskDistribution
 {
-    public class CalculateRiskSummaryHandler : IRequestHandler<CalculateRiskDistributionCommand, CalculateRiskDistributionResult>
+    public class CalculateRiskDistributionHandler : IRequestHandler<CalculateRiskDistributionCommand, CalculateRiskDistributionResult>
     {
-        private readonly RiskEvaluator _evaluator;
+        private readonly IRiskEvaluator _riskEvaluator;
 
-        public CalculateRiskSummaryHandler(RiskEvaluator evaluator)
+        public CalculateRiskDistributionHandler(IRiskEvaluator evaluator)
         {
-            _evaluator = evaluator;
+            _riskEvaluator = evaluator;
         }
 
         public Task<CalculateRiskDistributionResult> Handle(CalculateRiskDistributionCommand request, CancellationToken cancellationToken)
@@ -23,7 +23,7 @@ namespace TradeRiskEvaluator.Application.Features.CalculateRiskDistribution
             {
                 var sectorEnum = Enum.Parse<Sector>(dto.ClientSector, ignoreCase: true);
                 var tradeEntity = new Trade(dto.Value, sectorEnum, dto.ClientId);
-                var riskCategory = _evaluator.Evaluate(tradeEntity);
+                var riskCategory = _riskEvaluator.Evaluate(tradeEntity);
 
                 return new { Risk = riskCategory, Trade = tradeEntity };
             }).ToList();

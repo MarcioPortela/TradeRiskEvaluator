@@ -7,9 +7,9 @@ namespace TradeRiskEvaluator.Application.Features.CalculateRisk
 {
     public class CalculateRiskHandler : IRequestHandler<CalculateRiskCommand, List<string>>
     {
-        private readonly RiskEvaluator _evaluator;
+        private readonly IRiskEvaluator _evaluator;
 
-        public CalculateRiskHandler(RiskEvaluator evaluator)
+        public CalculateRiskHandler(IRiskEvaluator evaluator)
         {
             _evaluator = evaluator;
         }

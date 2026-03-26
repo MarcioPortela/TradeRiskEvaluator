@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IRiskRule, HighRiskRule>();
 builder.Services.AddScoped<IRiskRule, MediumRiskRule>();
 builder.Services.AddScoped<IRiskRule, LowRiskRule>();
-builder.Services.AddScoped<RiskEvaluator>();
+builder.Services.AddScoped<IRiskEvaluator, RiskEvaluator>();
 
 builder.Services.AddMediatR(cfg =>
 {

@@ -2,7 +2,7 @@
 
 namespace TradeRiskEvaluator.Domain.RiskRules
 {
-    public class RiskEvaluator
+    public class RiskEvaluator : IRiskEvaluator
     {
         private readonly IEnumerable<IRiskRule> _rules;
 

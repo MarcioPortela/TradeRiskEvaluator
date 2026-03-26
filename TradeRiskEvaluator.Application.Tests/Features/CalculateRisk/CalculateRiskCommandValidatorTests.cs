@@ -1,15 +1,16 @@
 using FluentValidation.TestHelper;
+using TradeRiskEvaluator.Application.Constants;
 using TradeRiskEvaluator.Application.Features.CalculateRisk;
 
 namespace TradeRiskEvaluator.Application.Tests.Features.CalculateRisk
 {
     public class CalculateRiskCommandValidatorTests
     {
-        private readonly CalculateRiskCommandValidator _validator;
+        private readonly CalculateRiskCommandValidator _calculateRiskCommandValidator;
 
         public CalculateRiskCommandValidatorTests()
         {
-            _validator = new CalculateRiskCommandValidator();
+            _calculateRiskCommandValidator = new CalculateRiskCommandValidator();
         }
 
         [Fact]
@@ -17,7 +18,7 @@ namespace TradeRiskEvaluator.Application.Tests.Features.CalculateRisk
         {
             var command = new CalculateRiskCommand { Trades = [] };
 
-            var result = _validator.TestValidate(command);
+            var result = _calculateRiskCommandValidator.TestValidate(command);
 
             result.ShouldHaveValidationErrorFor(x => x.Trades)
                   .WithErrorMessage("The list of trades cannot be empty.");
@@ -28,7 +29,7 @@ namespace TradeRiskEvaluator.Application.Tests.Features.CalculateRisk
         {
             var command = new CalculateRiskCommand { Trades = null! };
 
-            var result = _validator.TestValidate(command);
+            var result = _calculateRiskCommandValidator.TestValidate(command);
 
             result.ShouldHaveValidationErrorFor(x => x.Trades)
                   .WithErrorMessage("The list of trades cannot be empty.");
@@ -45,7 +46,7 @@ namespace TradeRiskEvaluator.Application.Tests.Features.CalculateRisk
                 ]
             };
 
-            var result = _validator.TestValidate(command);
+            var result = _calculateRiskCommandValidator.TestValidate(command);
 
             result.ShouldNotHaveAnyValidationErrors();
         }
@@ -61,10 +62,10 @@ namespace TradeRiskEvaluator.Application.Tests.Features.CalculateRisk
                 ]
             };
 
-            var result = _validator.TestValidate(command);
+            var result = _calculateRiskCommandValidator.TestValidate(command);
 
             result.ShouldHaveValidationErrorFor("Trades[1].Value")
-                  .WithErrorMessage("Trade value must be greater than zero.");
+                  .WithErrorMessage(ValidationMessages.GreaterThanZero.Replace("{PropertyName}", "Value"));
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using TradeRiskEvaluator.Application.Constants;
+using TradeRiskEvaluator.Domain.Enum;
 
 namespace TradeRiskEvaluator.Application.Features.CalculateRisk
 {
@@ -13,15 +15,12 @@ namespace TradeRiskEvaluator.Application.Features.CalculateRisk
         public TradeRequestValidator()
         {
             RuleFor(x => x.Value)
-                .GreaterThan(0).WithMessage("Trade value must be greater than zero.");
+                .GreaterThan(0).WithMessage(ValidationMessages.GreaterThanZero);
 
             RuleFor(x => x.ClientSector)
-                .NotEmpty().WithMessage("ClientSector is required.")
-                .Must(sector => sector != null && 
-                                (sector.Equals("Public", StringComparison.OrdinalIgnoreCase) ||
-                                sector.Equals("Private", StringComparison.OrdinalIgnoreCase)))
-                .WithMessage("ClientSector must be exactly 'Public' or 'Private'.");
+                .NotEmpty().WithMessage(ValidationMessages.RequiredField)
+                .IsEnumName(typeof(Sector), caseSensitive: false)
+                .WithMessage(ValidationMessages.InvalidSector);
         }
     }
-
 }
