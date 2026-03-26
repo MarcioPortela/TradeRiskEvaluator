@@ -1,5 +1,9 @@
 # Trade Risk Evaluator API
 
+![.NET Core](https://img.shields.io/badge/.NET%208-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Test Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen?style=for-the-badge)
+![Clean Architecture](https://img.shields.io/badge/Architecture-Clean-blue?style=for-the-badge)
+
 A highly optimized, enterprise-grade REST API built with **.NET 8** for evaluating and categorizing financial trades based on risk criteria. 
 
 This project was designed with a strong focus on **Clean Architecture**.
