@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeRiskEvaluator.Domain.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeRiskEvaluator.Application.Tests", "TradeRiskEvaluator.Application.Tests\TradeRiskEvaluator.Application.Tests.csproj", "{3B23C98F-42C8-48FE-8E79-1DDBEAB74DF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeRiskEvaluator.API.Tests", "TradeRiskEvaluator.API.Tests\TradeRiskEvaluator.API.Tests.csproj", "{CDFBB89E-4AB5-489A-A9F9-BF99D2B98AEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3B23C98F-42C8-48FE-8E79-1DDBEAB74DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B23C98F-42C8-48FE-8E79-1DDBEAB74DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B23C98F-42C8-48FE-8E79-1DDBEAB74DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDFBB89E-4AB5-489A-A9F9-BF99D2B98AEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFBB89E-4AB5-489A-A9F9-BF99D2B98AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFBB89E-4AB5-489A-A9F9-BF99D2B98AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFBB89E-4AB5-489A-A9F9-BF99D2B98AEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
