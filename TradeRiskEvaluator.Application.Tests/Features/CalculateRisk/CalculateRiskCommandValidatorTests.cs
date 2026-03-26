@@ -21,7 +21,7 @@ namespace TradeRiskEvaluator.Application.Tests.Features.CalculateRisk
             var result = _calculateRiskCommandValidator.TestValidate(command);
 
             result.ShouldHaveValidationErrorFor(x => x.Trades)
-                  .WithErrorMessage("The list of trades cannot be empty.");
+                  .WithErrorMessage(ValidationMessages.EmptyTradesList);
         }
 
         [Fact]
@@ -32,7 +32,7 @@ namespace TradeRiskEvaluator.Application.Tests.Features.CalculateRisk
             var result = _calculateRiskCommandValidator.TestValidate(command);
 
             result.ShouldHaveValidationErrorFor(x => x.Trades)
-                  .WithErrorMessage("The list of trades cannot be empty.");
+                  .WithErrorMessage(ValidationMessages.EmptyTradesList);
         }
 
         [Fact]
