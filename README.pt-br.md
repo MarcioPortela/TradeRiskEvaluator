@@ -1,5 +1,9 @@
 # API de Avaliação de Risco de Trades
 
+![.NET Core](https://img.shields.io/badge/.NET%208-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Cobertura de Testes](https://img.shields.io/badge/Cobertura-100%25-brightgreen?style=for-the-badge)
+![Clean Architecture](https://img.shields.io/badge/Arquitetura-Clean-blue?style=for-the-badge)
+
 Uma API REST de nível corporativo e altamente otimizada, construída em **.NET 8** para avaliar e categorizar operações financeiras (Trades) com base em critérios de risco.
 
 Este projeto foi desenhado com forte foco em **Clean Architecture**.
