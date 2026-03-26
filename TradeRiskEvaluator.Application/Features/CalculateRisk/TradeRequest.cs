@@ -17,8 +17,9 @@ namespace TradeRiskEvaluator.Application.Features.CalculateRisk
 
             RuleFor(x => x.ClientSector)
                 .NotEmpty().WithMessage("ClientSector is required.")
-                .Must(sector => sector.Equals("Public", StringComparison.OrdinalIgnoreCase) ||
-                                sector.Equals("Private", StringComparison.OrdinalIgnoreCase))
+                .Must(sector => sector != null && 
+                                (sector.Equals("Public", StringComparison.OrdinalIgnoreCase) ||
+                                sector.Equals("Private", StringComparison.OrdinalIgnoreCase)))
                 .WithMessage("ClientSector must be exactly 'Public' or 'Private'.");
         }
     }
